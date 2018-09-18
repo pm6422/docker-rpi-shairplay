@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
         libltdl-dev \
         libao-dev \
         libavahi-compat-libdnssd-dev \
-        avahi-daemon && \
+        avahi-daemon
 
 
 # Clone and build the package.
