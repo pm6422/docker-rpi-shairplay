@@ -3,11 +3,10 @@ MAINTAINER Louis <pm6422@126.com>
 
 # Install the build dependencies.
 RUN apt-get update && apt-get install -y \
-        build-essential \
+        git \
         autoconf \
         automake \
         libtool \
-        git \
         libltdl-dev \
         libao-dev \
         libavahi-compat-libdnssd-dev \
