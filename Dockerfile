@@ -3,15 +3,15 @@ MAINTAINER Louis <pm6422@126.com>
 
 # Install the build dependencies.
 RUN apt-get update && apt-get install -y \
-        build-base \
+        build-essential \
         autoconf \
         automake \
         libtool \
         git \
-        libltdl \
+        libltdl-dev \
         libao-dev \
-        avahi-dev \
-        avahi-compat-libdns_sd && \
+        libavahi-compat-libdnssd-dev \
+        avahi-daemon && \
 
 
 # Clone and build the package.
