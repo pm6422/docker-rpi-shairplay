@@ -1,8 +1,8 @@
-FROM dduportal/rpi-alpine
-MAINTAINER Adrian Sampson <adrian@radbox.org>
+FROM resin/rpi-raspbian
+MAINTAINER Louis <pm6422@126.com>
 
 # Install the build dependencies.
-RUN apk add --update \
+RUN apt-get update && apt-get install -y \
         build-base \
         autoconf \
         automake \
@@ -12,7 +12,7 @@ RUN apk add --update \
         libao-dev \
         avahi-dev \
         avahi-compat-libdns_sd && \
-    rm -rf /var/cache/apk/*
+
 
 # Clone and build the package.
 RUN git clone https://github.com/juhovh/shairplay.git
