@@ -2,12 +2,15 @@ FROM resin/rpi-raspbian
 MAINTAINER Louis <pm6422@126.com>
 
 # Install the build dependencies.
-RUN apt-get update && \
-        apt-get install -y \
+RUN apt-get update && apt-get install -y \
         git \
-        apt-get install autoconf automake libtool \
-        apt-get install libltdl-dev libao-dev libavahi-compat-libdnssd-dev \
-        apt-get install avahi-daemon
+        autoconf \
+        automake \
+        libtool \
+        libltdl-dev \
+        libao-dev \
+        libavahi-compat-libdnssd-dev \
+        avahi-daemon
 
 # Clone and build the package.
 RUN git clone https://github.com/juhovh/shairplay.git
