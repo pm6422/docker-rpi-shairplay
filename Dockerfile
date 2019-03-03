@@ -21,8 +21,7 @@ RUN apt-get update && apt-get install -y \
         libssl-dev                                                                                                                                       
                                                                                                                                                          
 # Clone and build the package.                                                                                                                           
-RUN git clone https://github.com/juhovh/shairplay.git                                                                                                    
-                                                                                                                                                         
+RUN git clone https://github.com/juhovh/shairplay.git                                                                                                                                                                                                                                                             
 WORKDIR shairplay                                                                                                                                        
 RUN ./autogen.sh                                                                                                                                         
 RUN ./configure --with-alsa --with-avahi --with-ssl=openssl --with-systemd --sysconfdir=/etc                                                             
