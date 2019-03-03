@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/juhovh/shairplay.git                                                                                                                                                                                                                                                             
 WORKDIR shairplay                                                                                                                                        
 RUN ./autogen.sh                                                                                                                                         
-RUN ./configure --with-alsa --with-avahi --with-ssl=openssl --with-systemd --sysconfdir=/etc                                                             
+RUN ./configure                                                          
                                                                                                                                                          
 RUN make                                                                                                                                                 
 RUN sudo make install                                                                                                                                    
@@ -41,7 +41,7 @@ RUN sudo make install
                                                                                                                                                          
 #CMD ["shairplay", "-a 'Airplay Speaker'"]                                                                                                               
                                                                                                                                                          
-RUN sed -i 's/rlimit-nproc=3//' /etc/avahi/avahi-daemon.conf                                                                                             
+#RUN sed -i 's/rlimit-nproc=3//' /etc/avahi/avahi-daemon.conf                                                                                             
                                                                                                                                                          
 COPY start.sh /start.sh                                                                                                                                  
 RUN chmod +x /start.sh                                                                                                                                   
